@@ -1,0 +1,10 @@
+variable "project_name" { type = string }
+variable "environment" { type = string }
+variable "instance_type" { type = string }
+variable "instance_count" { type = number }
+variable "availability_zones" { type = list(string) }
+variable "private_subnet_ids" { type = list(string) }
+variable "public_subnet_ids" { type = list(string) }
+variable "webserver_sg_id" { type = string }
+variable "bastion_sg_id" { type = string }
+variable "public_key_path" { type = string }

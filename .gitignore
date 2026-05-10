@@ -1,0 +1,43 @@
+# ── Terraform ────────────────────────────────────────────────────
+# Providers & plugins (downloaded via `terraform init`)
+**/.terraform/
+
+# State files — contain sensitive data (secrets, IPs, ARNs)
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Variable overrides (may contain secrets)
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+
+# Plan output files
+*.tfplan
+out.plan
+
+# Dependency lock file — optional: remove this line if you want
+# reproducible provider versions pinned across the team
+.terraform.lock.hcl
+
+# ── SSH Keys ─────────────────────────────────────────────────────
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# ── OS / Editor ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ── Environment ──────────────────────────────────────────────────
+.env
+.env.*
