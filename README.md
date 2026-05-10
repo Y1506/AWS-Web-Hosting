@@ -1,6 +1,6 @@
 <div align="center">
 
-# ☁️ MyApp — AWS Infrastructure as Code
+# Webhosting On AWS
 
 **Production-grade, multi-AZ web infrastructure on AWS — fully automated with Terraform**
 
@@ -21,17 +21,17 @@ The infrastructure serves a real-time **status dashboard** via Nginx on EC2 inst
 
 ### Key Highlights
 
-- 🏗️ **Multi-AZ Deployment** — Web servers spread across `us-east-1a` and `us-east-1b` for high availability
-- ⚖️ **Application Load Balancer** — Layer 7 load balancing with health checks and HTTP/2
-- 🔗 **API Gateway** — HTTP API with VPC Link, CORS, throttling, and CloudWatch logging
-- 🌍 **Route 53 DNS** — Custom domain with apex + www alias records pointing to ALB
-- 🛡️ **Defense in Depth** — Layered security with Security Groups, NACLs, Bastion host, and IMDSv2
-- 💰 **Free Tier Optimized** — Carefully tuned to stay within AWS free tier limits
-- 📦 **Modular Design** — 6 independent Terraform modules with clean dependency management
+-  **Multi-AZ Deployment** — Web servers spread across `us-east-1a` and `us-east-1b` for high availability
+-  **Application Load Balancer** — Layer 7 load balancing with health checks and HTTP/2
+-  **API Gateway** — HTTP API with VPC Link, CORS, throttling, and CloudWatch logging
+-  **Route 53 DNS** — Custom domain with apex + www alias records pointing to ALB
+-  **Defense in Depth** — Layered security with Security Groups, NACLs, Bastion host, and IMDSv2
+-  **Free Tier Optimized** — Carefully tuned to stay within AWS free tier limits
+-  **Modular Design** — 6 independent Terraform modules with clean dependency management
 
 ---
 
-## 🏛️ Architecture
+## Architecture
 
 > For the full architecture deep-dive with detailed diagrams, see **[architecture.md](architecture.md)**.
 
@@ -65,7 +65,7 @@ flowchart TB
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 my-app/
@@ -92,7 +92,7 @@ my-app/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -158,11 +158,11 @@ Open the **ALB DNS name** in your browser to see the dashboard.
 terraform destroy
 ```
 
-> ⚠️ **Always destroy** when not in use to avoid charges, especially the Route 53 hosted zone ($0.50/month).
+> ⚠️ **Always destroy** when not in use to avoid charges, especially the Route 53 hosted zone.
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 All variables have sensible defaults and can be overridden in `terraform.tfvars` or via CLI flags.
 
@@ -194,7 +194,7 @@ instance_type    = "t2.micro"
 
 ---
 
-## 🔐 Security
+## Security
 
 ### Layered Security Model
 
@@ -243,7 +243,7 @@ ssh ec2-user@<web-server-private-ip>
 
 ---
 
-## 🧩 Modules
+## Modules
 
 Each module is self-contained with its own `main.tf`, `variables.tf`, and `outputs.tf`.
 
@@ -267,9 +267,9 @@ vpc ──► security ──► compute ──► load_balancer ──► dns
 
 ---
 
-## 💰 Cost & Free Tier
+## Cost & Free Tier
 
-This architecture is optimized for the **AWS Free Tier** (first 12 months of new accounts).
+This architecture is optimized for the **AWS Free Tier**.
 
 | Service | Free Tier Allowance | This Project | Status |
 |---------|--------------------:|:-------------|:------:|
@@ -277,7 +277,7 @@ This architecture is optimized for the **AWS Free Tier** (first 12 months of new
 | **EBS** (gp2) | 30 GB | 28 GB (10+10+8) | ✅ |
 | **ALB** | 750 hrs + 15 LCUs/mo | 1 ALB | ✅ |
 | **API Gateway** (HTTP) | 1M calls/month | 1 API | ✅ |
-| **Route 53** | — | 1 Hosted Zone | 💲 $0.50/mo |
+| **Route 53** | — | 1 Hosted Zone | ₹ 47/mo |
 | **CloudWatch Logs** | 5 GB ingest | API GW logs | ✅ |
 | **Data Transfer** | 1 GB out/month | Minimal | ✅ |
 
@@ -357,9 +357,3 @@ terraform validate
 4. **Destroy After Demo** — Route 53 hosted zones cost $0.50/month. Always run `terraform destroy` when finished.
 
 ---
-
-<div align="center">
-
-**Built with** ❤️ **using Terraform + AWS**
-
-</div>
