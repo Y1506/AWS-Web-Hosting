@@ -6,7 +6,6 @@
 
 [![Terraform](https://img.shields.io/badge/Terraform-v1.x-7B42BC?logo=terraform&logoColor=white)](https://www.terraform.io/)
 [![AWS](https://img.shields.io/badge/AWS-us--east--1-FF9900?logo=amazonwebservices&logoColor=white)](https://aws.amazon.com/)
-[![License](https://img.shields.io/badge/License-MIT-22c55e)](LICENSE)
 [![Free Tier](https://img.shields.io/badge/Cost-Free%20Tier%20Optimized-38bdf8)](#-cost--free-tier)
 
 </div>
@@ -354,6 +353,6 @@ terraform validate
 
 3. **State File Security** — The `terraform.tfstate` file contains sensitive data. For team use, configure [remote state](https://developer.hashicorp.com/terraform/language/state/remote) with S3 + DynamoDB.
 
-4. **Destroy After Demo** — Route 53 hosted zones cost $0.50/month. Always run `terraform destroy` when finished.
+4. **Destroy After Demo** — Route 53 hosted zones cost ₹47/month. Always run `terraform destroy` when finished.
 
 ---
